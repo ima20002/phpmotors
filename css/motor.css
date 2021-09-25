@@ -58,7 +58,11 @@ nav a:hover {
 }
 
 /*------------------main--------------------*/
-h2{
+.main_content h1 {
+    padding-left: 15px;
+}
+
+.sub_title{
     text-align: left;
     padding-left: 15px;
     font-size: 1.9rem;
