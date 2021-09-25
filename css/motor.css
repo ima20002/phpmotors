@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira+Semi+Condensed:wght@100&display=swap');
+
+body {
+    font-family: 'Saira Semi Condensed', 'Aria', sans-serif;
+    margin: 0px;
+}
+.wrapper {
+    background-color: white;
+    width: 100%;
+    margin: auto;
+}
+
+/*-----------------header-------------------*/
+
+header a {
+    float: right;
+    margin: 20px 20px 0 0;
+    text-decoration: none;
+}
+
+/*-------------------nav--------------------*/
+nav {
+    background-color: #3a3a3a;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    
+}
+
+nav ul {
+    list-style: none;
+    text-align: center;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    padding: 0 5px 0 5px;
+}
+
+nav ul a {
+    display: block;
+    color: #fff;
+    padding: 0.75rem;
+    text-align: center;
+    text-decoration: none;
+}
+nav ul:hover{
+    color: #4c96d7;
+}
+nav a:hover {
+    color: #000;
+    background-color: #4c96d7;
+    padding: 15px 5px;
+    margin: -3px;
+    font-weight: 700;
+}
+
+/*------------------main--------------------*/
+h2{
+    text-align: left;
+    padding-left: 15px;
+    font-size: 1.9rem;
+    font-weight: bold;
+}
+.main_content {
+    position: relative;
+}
+.message {
+    color: #4c96d7;
+    position: absolute;
+    width: 30%;
+    top: 50px;
+    left: 20px;
+    line-height: 5px;
+}
+
+#motor_car_pic {
+    width: 100%;
+}
+#own_today_button {
+    width: 30%;
+    margin: 20px auto;
+    
+}
+#own_today_button img{
+    width: 100%;
+}
+/*--------------dmc---------------*/
+
+/*-------------upgrade-------------*/
+.upgrade_content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+}
+figure{
+    margin: auto;
+}
+.upgrade img {
+    background-color: #4c96d7;
+    border: 1px solid #3a3a3a;
+    max-height: 200px;
+    padding: 20px 60px;
+}
+figcaption {
+    text-align: center;
+}
+/*-----------------footer-------------------*/
+hr {
+    border: 2px solid;
+}
+footer {
+    padding: 10px;
+}
+footer p {
+    text-align: center;
+}
+
+
+
+
+@media only screen and (min-width: 55rem) {
+    body {
+        background-image: url("/phpmotors/images/site/checkerboard.jpg");
+        background-repeat: repeat;
+    } 
+    #wrapper {
+        border: 5px solid #4c96d7;
+        border-radius: 0.6em;
+        width: 90%;
+        background-color: #ffffff;
+        margin: 20px auto;
+    }
+
+    /*---------main-----------*/
+    .message {
+        position: absolute;
+        top: 60px;
+        left: 70px;
+    }
+    #own_today_button img{
+        position: absolute;
+        top: 170px;
+        left: 50px;
+        width: 20%;
+        max-width: 250px;
+    }
+    /*----reviw and upgrades---*/
+    #review_upgrade {
+        display: flex;
+        flex-direction: row;
+        grid-gap: 5px;
+        margin: 20px;
+    }
+    .dmc {
+        width: 300px;
+        height: 400px;
+        padding: 10px;
+        margin: auto;
+        flex: 50%;
+    }
+    .upgrade {
+        order: -1;
+        width: 300px;
+        padding: 10px;
+        margin: auto;
+        flex: 50%;
+    }
+    
+} 
