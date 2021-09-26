@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <title>PHP Motors</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" media="screen" href="/phpmotors/css/motor.css" type="text/css">
+        <link rel="stylesheet" media="screen" href="/phpmotors/css/style.css" type="text/css">
     </head>
     <body>
         <div id="wrapper">
@@ -35,6 +35,6 @@
                 <p>Last Updated: 30 March, 2018</p>
             </footer>
         </div>
-        <script src="../js/inventory.js"></script>
+        
     </body>
 </html>

@@ -1,7 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Saira+Semi+Condensed:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Saira+Semi+Condensed:wght@200&display=swap');
+
 
 body {
-    font-family: 'Saira Semi Condensed', 'Aria', sans-serif;
+    font-family: 'Saira Semi Condensed', sans-serif;
     margin: 0px;
 }
 .wrapper {
@@ -61,20 +62,13 @@ nav a:hover {
 .main_content h1 {
     padding-left: 15px;
 }
-
-.sub_title{
-    text-align: left;
-    padding-left: 15px;
-    font-size: 1.9rem;
-    font-weight: bold;
-}
 .main_content {
     position: relative;
 }
 .message {
-    color: #4c96d7;
+    color: #2476d3;
     position: absolute;
-    width: 30%;
+    width: 40%;
     top: 50px;
     left: 20px;
     line-height: 5px;
@@ -92,7 +86,12 @@ nav a:hover {
     width: 100%;
 }
 /*--------------dmc---------------*/
-
+.sub_title {
+    text-align: left;
+    padding-left: 15px;
+    font-size: 1.9rem;
+    font-weight: bold;
+}
 /*-------------upgrade-------------*/
 .upgrade_content {
     display: grid;
@@ -122,9 +121,6 @@ footer p {
     text-align: center;
 }
 
-
-
-
 @media only screen and (min-width: 55rem) {
     body {
         background-image: url("/phpmotors/images/site/checkerboard.jpg");
@@ -144,6 +140,7 @@ footer p {
         top: 60px;
         left: 70px;
     }
+
     #own_today_button img{
         position: absolute;
         top: 170px;
