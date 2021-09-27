@@ -21,5 +21,5 @@ DELETE FROM inventory WHERE invMake = 'Jeep' AND invModel ='Wrangler';
 
 -- SQL Statements 6
 UPDATE inventory
-SET invImage = concat('/phpmotors', invImage)),
-    invThumbnail = concat('/phpmotors', invThumbnail));
+SET invImage = concat('/phpmotors', invImage),
+    invThumbnail = concat('/phpmotors', invThumbnail);
