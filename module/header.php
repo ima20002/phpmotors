@@ -11,6 +11,6 @@
             <header>
                 <div id="to-header">
                     <img src="/phpmotors/images/site/logo.png" alt="Logo">
-                    <a href="">My Account</a>
+                    <a href="/phpmotors/accounts/?action=login">My Account</a>
                 </div>
             </header>

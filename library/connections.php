@@ -8,9 +8,11 @@ function phpmotorsConnect(){
     $dbname = 'phpmotors';
     $username = 'iClient';
     $password = 'FK7m8UtFvQ8YDt4T';
+
     $dsn = "mysql:host=$server;dbname=$dbname";
     $options = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION);
 
+    //
     try {
         $link = new PDO($dsn, $username, $password, $options);
         //if (is_object($link)) {

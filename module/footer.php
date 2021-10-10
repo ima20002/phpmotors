@@ -1,4 +1,4 @@
-            </main>
+
             <hr>
             <footer>
                 <p>&copy; PHP Motors, All rights reserved.</p>
