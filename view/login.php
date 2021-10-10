@@ -6,10 +6,10 @@
                 <div class="login">
                     <h1>Sign in</h1>
                     <form>
-                        <label for="email">Email</label><br>
+                        <label for="clientEmail">Email</label><br>
                         <input name="clientEmail" id="clientEmail" type="email"><br>
 
-                        <label for="password">Password</label><br>
+                        <label for="clientPassword">Password</label><br>
                         <input name="clientPassword" id="clientPassword" type="password"><br>
 
                         <input type="submit" value="LOGIN" id="login_button">
