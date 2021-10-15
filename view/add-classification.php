@@ -4,22 +4,19 @@
             </nav>
             <main>
                 <div class="main_content">
-                    <h1>Sign in</h1>
+                    <h1>Add Car Classification</h1>
                     <?php
                     if (isset($message)) {
                     echo $message;
                     }
                     ?>
                     <form action="/phpmotors/accounts/index.php" method="post">
-                        <label for="clientEmail">Email</label><br>
-                        <input name="clientEmail" id="clientEmail" type="email"><br>
+                        <label for="classificationName">Classification Name</label><br>
+                        <input name="classificationName" id="classificationName" type="text"><br>
 
-                        <label for="clientPassword">Password</label><br>
-                        <input name="clientPassword" id="clientPassword" type="password"><br>
-
-                        <input type="submit" value="LOGIN" id="btn">
+                        <input type="submit" value="Add Classification" id="btn">
+                        <input type="hidden" name="action" value="adding-classification">
                     </form>
-                    <p>No account? <a href="/phpmotors/accounts/?action=registration">Sign-up</a></p>
                 </div>
             </main>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/module/footer.php'; ?> 

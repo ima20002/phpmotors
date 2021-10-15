@@ -3,9 +3,14 @@
                 <?php echo $navList; ?>
             </nav>
             <main>
-                <div class="register">
+                <div class="main_content">
                     <h1>Register</h1>
-                    <form>
+                    <?php
+                    if (isset($message)) {
+                    echo $message;
+                    }
+                    ?>
+                    <form method="post" action="/phpmotors/accounts/index.php">
                         <label for="clientFirstname">First name:</label><br>
                         <input id="clientFirstname" name="clientFirstname" type="text"><br>
 
@@ -18,7 +23,9 @@
                         <label for="clientPassword">Password:</label><br>
                         <input name="clientPassword" id="clientPassword" type="password"><br>
 
-                        <input type="submit" value="Register" id="register_button">
+                        <input type="submit" name="submit" value="Register" id="btn">
+                        <!-- Add the action name - value pair -->
+                        <input type="hidden" name="action" value="register">
                     </form> 
                 </div>
             </main>

@@ -124,10 +124,10 @@ footer p {
     text-align: center;
 }
 /*-----------------login & register-------------------*/
-.login {
+.main_content {
     padding-left: 20px;
 }
-#login_button {
+#btn {
     margin: 10px;
     padding: 5px;
 }
@@ -135,13 +135,6 @@ footer p {
     font-size: 1.3rem;
 }
 
-.register {
-    padding-left: 20px;
-}
-#register_button {
-    margin: 10px;
-    padding: 5px;
-}
 
 
 
