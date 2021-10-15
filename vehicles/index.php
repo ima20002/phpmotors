@@ -8,6 +8,7 @@ require_once '../model/main-model.php';
 // Get the vehicles model
 require_once '../model/vehicles-model.php';
 
+
 // Get the array of classifications
 $classifications = getClassifications();
 
