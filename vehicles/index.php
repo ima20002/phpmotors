@@ -81,7 +81,7 @@ switch ($action){
     // Check for missing data
     if(empty($invMake) || empty($invModel) || empty($invDescription) || empty($invImage) || empty($invThumbnail) || empty($invPrice) || empty($invStock) || empty($invColor) || empty($classificationId)){
         $message = '<p>Please provide information for all empty form fields.</p>';
-        include '../view/add-classification.php';
+        include '../view/add-vehicle.php';
         exit;
     }
 
@@ -90,8 +90,8 @@ switch ($action){
 
     // Check and report the result
     if($vehicleOutcome === 1){
-        $message = "<p>Adding Classification Name failed. Please try again.</p>";
-        include '../view/add-classification.php';
+        $message = "<p>Thanks for adding vehicle.</p>";
+        include '../view/add-vehicle.php';
         exit;
     } else {
         $message = "<p>Adding vehicle failed. Please try again.</p>";
