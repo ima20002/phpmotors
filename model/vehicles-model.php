@@ -8,7 +8,7 @@ function addClassification($classificationName){
  // Create a connection object using the phpmotors connection function
  $db = phpmotorsConnect();
  // The SQL statement
- $sql = 'INSERT INTO carclassification(classificationName)
+ $sql = 'INSERT INTO carclassification (classificationName)
      VALUES (:classificationName)';
  // Create the prepared statement using the phpmotors connection
  $stmt = $db->prepare($sql);
@@ -30,7 +30,7 @@ function addVehicle($invMake, $invModel, $invDescription, $invImage, $invThumbna
     // Create a connection object using the phpmotors connection function
     $db = phpmotorsConnect();
     // The SQL statement
-    $sql = 'INSERT INTO inventory(invMake, invModel, invDescription, invImage, invThumbnail, invPrice, invStock, invColor, classificationId)
+    $sql = 'INSERT INTO inventory (invMake, invModel, invDescription, invImage, invThumbnail, invPrice, invStock, invColor, classificationId)
         VALUES (:invMake, :invModel, :invDescription, :invImage, :invThumbnail, :invPrice, :invStock, :invColor, :classificationId)';
     // Create the prepared statement using the phpmotors connection
     $stmt = $db->prepare($sql);

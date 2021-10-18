@@ -10,7 +10,7 @@
                     echo $message;
                     }
                     ?>
-                    <form action="/phpmotors/accounts/index.php" method="post">
+                    <form action="/phpmotors/vehicles/index.php" method="post">
                         <label for="classificationName">Classification Name</label><br>
                         <input name="classificationName" id="classificationName" type="text"><br>
 

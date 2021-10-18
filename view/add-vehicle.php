@@ -10,7 +10,7 @@
                     echo $message;
                     }
                     ?>
-                    <form action="/phpmotors/accounts/index.php" method="post">
+                    <form action="/phpmotors/vehicles/index.php" method="post">
                         <p>*Note all Fields are Required</p>
                         <?php echo $classificationList; ?><br>
 
@@ -30,7 +30,7 @@
                         <input type="text" id="invThumbnail" name="invThumbnail"><br>
 
                         <label for="invPrice">Price</label><br>
-                        <input type="number" id="invPrice" name="invPrice"?><br>
+                        <input type="number" id="invPrice" name="invPrice"><br>
 
                         <label for="invStock">Stock</label><br>
                         <input type="number" id="invStock" name="invStock"><br>

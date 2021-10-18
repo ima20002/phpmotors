@@ -23,7 +23,7 @@ $navList .= '</ul>';
 
 $classificationList = '<select id="classificationId" name="classificationId">';
 foreach ($classifications as $classification) {
-    $classificationList .= "<option value='$classification[classificationId]'>$classification[classificationName]</option>";
+    $classificationList .= "<option value=" . urlencode($classification['classificationId']) . ">" . urlencode($classification['classificationName']) . "</option>";
 }
 $classificationList .= '</select>';
 
@@ -63,7 +63,7 @@ switch ($action){
         exit;
     }
 
-    include '../view/add-classification.php';
+    header('Location: index.php');
     break;
 
  case 'adding-vehicle':
