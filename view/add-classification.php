@@ -12,7 +12,8 @@
                     ?>
                     <form action="/phpmotors/vehicles/index.php" method="post">
                         <label for="classificationName">Classification Name</label><br>
-                        <input name="classificationName" id="classificationName" type="text"><br>
+                        <span class="msg">(Classification name must be no more than 30 characters)</span><br>
+                        <input name="classificationName" id="classificationName" type="text" maxlength="30" <?php if(isset($classificationName)){echo "value='$classificationName'";}  ?> required><br>
 
                         <input type="submit" value="Add Classification" id="btn">
                         <input type="hidden" name="action" value="adding-classification">
