@@ -12,6 +12,12 @@ foreach ($classifications as $classification) {
 $classificationList .= '</select>';
 
 ?><?php include $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/module/header.php'; ?>
+<?php
+    if (!$_SESSION['loggedin'] || $_SESSION['clientData']['clientLevel'] == 1) {
+        header('Location: ../index.php');
+        exit;
+    }
+?>
             <nav>
                 <?php echo $navList; ?>
             </nav>
@@ -23,7 +29,7 @@ $classificationList .= '</select>';
                     echo $message;
                     }
                     ?>
-                    <form action="/phpmotors/vehicles/index.php" method="post">
+                    <form class="space" action="/phpmotors/vehicles/index.php" method="post">
                         <p>*Note all Fields are Required</p>
                         <?php echo $classificationList; ?><br>
 

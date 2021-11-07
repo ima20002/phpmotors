@@ -1,4 +1,10 @@
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/module/header.php'; ?>
+<?php
+    if (!$_SESSION['loggedin'] || $_SESSION['clientData']['clientLevel'] == 1) {
+        header('Location: ../index.php');
+        exit;
+    }
+?>
             <nav>
                 <?php echo $navList; ?>
             </nav>
@@ -10,7 +16,7 @@
                     echo $message;
                     }
                     ?>
-                    <form action="/phpmotors/vehicles/index.php" method="post">
+                    <form class="space" action="/phpmotors/vehicles/index.php" method="post">
                         <label for="classificationName">Classification Name</label><br>
                         <span class="msg">(Classification name must be no more than 30 characters)</span><br>
                         <input name="classificationName" id="classificationName" type="text" maxlength="30" <?php if(isset($classificationName)){echo "value='$classificationName'";}  ?> required><br>

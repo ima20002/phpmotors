@@ -12,10 +12,15 @@ body {
 }
 
 /*-----------------header-------------------*/
+#to-header{
+    padding: 20px 20px 10px 10px;
+}
+header span {
+    float: right;
+}
 
 header a {
-    float: right;
-    margin: 20px 20px 0 0;
+    padding-right: 5px;
     text-decoration: none;
 }
 
@@ -126,6 +131,7 @@ footer p {
 /*-----------------login & register-------------------*/
 .main_content {
     padding-left: 20px;
+    padding-bottom: 20px;
 }
 #btn {
     margin: 10px;
@@ -139,6 +145,9 @@ footer p {
     padding-left: 10px;
 }
 
+.space {
+    padding-left: 20px;
+}
 
 
 
@@ -160,6 +169,7 @@ footer p {
         background-color: #ffffff;
         margin: 20px auto;
     }
+    /*--------header------------*/
 
     /*---------main-----------*/
     .message {
