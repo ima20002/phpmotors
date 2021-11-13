@@ -161,15 +161,6 @@ switch ($action) {
     
     $clientEmail = checkEmail($clientEmail);
     
-    // check for existing email
-    // $existingEmail = checkExistingEmail($clientEmail);
-    // // Check for existing email address in the table
-    // if ($existingEmail) {
-    //   $message = '<p>That email address already exists. Do you want to login instead?</p>';
-    //   include '../view/client-update.php';
-    //   exit;
-    // }
-
     // Check for missing data
     if (empty($clientFirstname) || empty($clientLastname) || empty($clientEmail)) {
       $message = '<p>Please provide information for all empty form fields.</p>';
