@@ -1,3 +1,15 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <title>PHP Motors</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" media="screen" href="../../phpmotors/css/style.css" type="text/css">
+</head>
+
+<body>
+    <div id="wrapper">
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/module/header.php'; ?>
             <nav>
                 <?php echo $navList; ?>
@@ -24,7 +36,7 @@
                         <span class="msg">Passwords must be at least 8 characters and contain at least 1 number, 1 capital letter and 1 special character</span><br>
                         <input name="clientPassword" id="clientPassword" type="password" required pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"><br>
 
-                        <input type="submit" name="submit" value="Register" id="btn">
+                        <input type="submit" name="submit" value="Register">
                         <!-- Add the action name - value pair -->
                         <input type="hidden" name="action" value="register">
                     </form> 

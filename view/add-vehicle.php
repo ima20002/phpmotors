@@ -11,7 +11,20 @@ foreach ($classifications as $classification) {
 }
 $classificationList .= '</select>';
 
-?><?php include $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/module/header.php'; ?>
+?>
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <title>PHP Motors</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" media="screen" href="../../phpmotors/css/style.css" type="text/css">
+</head>
+
+<body>
+    <div id="wrapper">
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/module/header.php'; ?>
 <?php
     if (!$_SESSION['loggedin'] || $_SESSION['clientData']['clientLevel'] == 1) {
         header('Location: ../index.php');
@@ -57,7 +70,7 @@ $classificationList .= '</select>';
                         <label for="invColor">Color</label><br>
                         <input type="text" id="invColor" name="invColor" <?php if(isset($invColor)){echo "value='$invColor'";}  ?> required><br>
 
-                        <input type="submit" name="submit" value="Add Vehicle" id="btn">
+                        <input type="submit" name="submit" value="Add Vehicle">
                         <input type="hidden" name="action" value="adding-vehicle">
                     </form>
                 </div>

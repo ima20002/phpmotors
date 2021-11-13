@@ -6,6 +6,6 @@
                 <p>Last Updated: 30 March, 2018</p>
             </footer>
         </div>
-        
+        <script src="../js/inventory.js"></script>  
     </body>
 </html>
