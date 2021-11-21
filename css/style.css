@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Saira+Semi+Condensed:wght@200&display=swap');
 
+html{
+    box-sizing: border-box;
+}
+   
+*, *:before, *:after {
+    box-sizing: inherit;
+}
 
 body {
     font-family: 'Saira Semi Condensed', sans-serif;
@@ -15,6 +22,11 @@ body {
 #to-header{
     padding: 20px 20px 10px 10px;
 }
+
+#to-header img{
+    max-width: 100px;
+}
+
 header span {
     float: right;
 }
@@ -28,7 +40,7 @@ header a {
 nav {
     background-color: #3a3a3a;
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     margin: auto;
     
 }
@@ -76,9 +88,10 @@ nav a:hover {
 .message {
     color: #2476d3;
     position: absolute;
-    width: 50%;
-    top: 50px;
-    left: 20px;
+    width: 40%;
+    font-size: 1em;
+    top: 90px;
+    left: 50px;
     line-height: 5px;
 }
 
@@ -120,7 +133,8 @@ figcaption {
 }
 /*-----------------footer-------------------*/
 hr {
-    border: 2px solid;
+    border: 2px solid rgb(124, 121, 121);
+    width: 100%;
 }
 footer {
     padding: 10px;
@@ -130,9 +144,13 @@ footer p {
 }
 /*-----------------login & register-------------------*/
 .main_content {
-    padding-left: 20px;
-    padding-bottom: 20px;
+    padding: 20px;
 }
+
+.main_content ul {
+    list-style-type: none;
+}
+
 input[type=submit] {
     margin: 10px;
     padding: 5px;
@@ -149,7 +167,45 @@ input[type=submit] {
     padding-left: 20px;
 }
 
+/*---------for vehicle display in classification view-----*/
+#inv-display{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
 
+#inv-display li {
+    margin-bottom: .5em;
+    border: 1px #ccc solid;
+    list-style-type: none;
+    flex: 1 1 auto;
+    border-radius: 0.6em;
+    margin: 10px;
+    padding-bottom: 10px;
+}
+   
+#inv-display li img {
+    max-width: 100%;
+    border-radius: 0.6em 0.6em 0 0;
+}
+
+#inv-display h2 {
+    margin: 10px;
+}
+
+#inv-display span {
+    margin: 10px;
+}
+/*---------for vehicle detail display----------*/
+#inv-detail-display {
+    margin: 15px;
+    padding: 15px;
+    display: flex;
+}
+#inv-detail-display img {
+    width: 80%;
+}
 
 
 
@@ -170,17 +226,20 @@ input[type=submit] {
         margin: 20px auto;
     }
     /*--------header------------*/
+    #to-header img{
+        max-width: 200px;
+    }
 
     /*---------main-----------*/
     .message {
         position: absolute;
-        top: 60px;
+        top: 80px;
         left: 70px;
     }
 
     #own_today_button img{
         position: absolute;
-        top: 170px;
+        top: 190px;
         left: 50px;
         width: 20%;
         max-width: 250px;
@@ -206,5 +265,39 @@ input[type=submit] {
         margin: auto;
         flex: 50%;
     }
+    /* For vehicle display in classification view */
+	#inv-display {
+		flex-flow: row wrap;
+		justify-content: flex-start;
+        margin: 0 50px 0 50px;
+	}
+
+	#inv-display h2{
+		font-size: 1rem;
+        margin: 5px;
+	}
+
+	#inv-display li {
+		max-width: 200px;
+		flex: 1 0 auto;
+		text-align: center;
+		height: 300px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+      
+	#inv-display div {
+		width: 100%;
+	}
+
+    /* For vehicle detail display*/
+    #inv-detail-display li {
+        display: flex;
+        margin: 0 50px 0 50px;
+    }
+    #inv-detail-display div {
+		padding: 10px;
+	}
     
 } 

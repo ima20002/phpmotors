@@ -18,7 +18,7 @@
                 
                 <div class="main_content">
                     <h1>Welcome to PHP Motors!</h1>
-                    <img id="motor_car_pic" src="/phpmotors/images/delorean.jpg" alt="Car">
+                    <img id="motor_car_pic" src="/phpmotors/images/vehicles/delorean.jpg" alt="Car">
                     <div class="message">
                         <h2>DMC Delorean</h2>
                         <p>3 cup holders</p>

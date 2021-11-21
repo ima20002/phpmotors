@@ -198,7 +198,30 @@ case 'deleteVehicle':
     }
     break;
 
- default:
+case 'classification':
+    $classificationName = filter_input(INPUT_GET, 'classificationName', FILTER_SANITIZE_STRING);
+    $vehicles = getVehiclesByClassification($classificationName);
+    if(!count($vehicles)){
+        $message = "<p class='notice'>Sorry, no $classificationName could be found.</p>";
+    } else {
+        $vehicleDisplay = buildVehiclesDisplay($vehicles);
+    }
+    include '../view/classification.php';
+    break;
+
+case 'vehicleinfomation':
+    $invId = filter_input(INPUT_GET, 'invId', FILTER_SANITIZE_STRING);
+    $vehicle = getInvItemInfo($invId);
+    if(!count($vehicle)){
+        $message = "<p class='notice'>Sorry, no vehicle could be found.</p>";
+    } else {
+        $vehicleDisplay = buildEachVehicleDisplay($vehicle);
+    }
+    include '../view/vehicle-detail.php';
+    break;
+
+
+default:
     $classificationList = buildClassificationList($classifications);
     include '../view/vehicle-man.php';
     exit;
