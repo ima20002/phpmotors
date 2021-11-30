@@ -12,6 +12,8 @@ require_once '../model/main-model.php';
 require_once '../model/vehicles-model.php';
 // Get the functions library
 require_once '../library/functions.php';
+// Get the uploads model
+require_once '../model/uploads-model.php';
 
 
 // Get the array of classifications
@@ -212,11 +214,11 @@ case 'classification':
 case 'vehicleinfomation':
     $invId = filter_input(INPUT_GET, 'invId', FILTER_SANITIZE_STRING);
     $vehicle = getInvItemInfo($invId);
-    if(!count($vehicle)){
-        $message = "<p class='notice'>Sorry, no vehicle could be found.</p>";
-    } else {
-        $vehicleDisplay = buildEachVehicleDisplay($vehicle);
-    }
+    $thumbnails = getThumbnailImages($invId);
+    
+    $vehicleDisplay = buildEachVehicleDisplay($vehicle);
+    $thumnailDisplay = buildThumnailDisplay($thumbnails);
+    
     include '../view/vehicle-detail.php';
     break;
 

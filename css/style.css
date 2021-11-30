@@ -42,6 +42,7 @@ nav {
     display: flex;
     /* flex-direction: column; */
     margin: auto;
+    width: auto;
     
 }
 
@@ -51,11 +52,10 @@ nav ul {
     display: flex;
     padding: 0;
     margin: 0;
+    width: auto;
 }
 
-nav ul li {
-    padding: 0 5px 0 5px;
-}
+
 
 nav ul a {
     display: block;
@@ -203,11 +203,34 @@ input[type=submit] {
     padding: 15px;
     display: flex;
 }
-#inv-detail-display img {
-    width: 80%;
+
+#inv-detail-display div:nth-child(2){
+    padding: 10px;
+    border: 2px #ccc solid;
+    border-radius: 0.6em;
+    background: rgb(240, 238, 238);
+    margin-top: 10px;
 }
 
+#inv-detail-display img {
+    width: 100%;
+    margin: auto;
+}
 
+#thumnails {
+    margin: 15px;
+    padding: 15px;
+}
+
+#thumnails li{
+    display: flex;
+    flex-direction: row;
+}
+
+#thumnails img {
+    width: 45%;
+    margin: 10px;
+}
 
 
 
@@ -228,6 +251,10 @@ input[type=submit] {
     /*--------header------------*/
     #to-header img{
         max-width: 200px;
+    }
+
+    nav ul li {
+        padding: 0 5px 0 5px;
     }
 
     /*---------main-----------*/
@@ -294,10 +321,47 @@ input[type=submit] {
     /* For vehicle detail display*/
     #inv-detail-display li {
         display: flex;
-        margin: 0 50px 0 50px;
+        margin: auto;
     }
     #inv-detail-display div {
 		padding: 10px;
 	}
+    .thumbnailtitle {
+        display: none;
+    }
+    /* For vehicle detail only for bigger screen */
+    .vehicle_wrap {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+    #inv-detail-display {
+        margin: auto;
+    }
+
+    #inv-detail-display div:nth-child(1){
+        width: 90%;
+    }
+
+    #inv-detail-display div:nth-child(2){
+        margin-top: 0;
+        margin-left: 10px;
+        flex-shrink: 2;
+    }
+
+
+    #thumnails {
+        margin: auto;
+    }
+    #thumnails li{
+        flex-direction: column;
+        width: 95%;
+    }
+
+    #thumnails img {
+        width: 100%;
+    }
+    #thumnails img:hover {
+        transform:scale(1.5);
+    }
     
 } 
