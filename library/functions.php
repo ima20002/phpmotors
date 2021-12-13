@@ -95,6 +95,30 @@ function buildThumnailDisplay($thumbnails){
    $dv .= '</ul>';
    return $dv;
 }
+
+// Review Display
+function buildReviewDisplay($reviewInfo){
+   $dv = "<div>";
+   foreach ($reviewInfo as $review){
+      $dv .= "<div id='eachreview'><h3>" . substr($review['clientFirstname'], 0, 1) . $review['clientLastname'] . " " . "</h3>";
+      $dv .= "<h4>wrote on " . date("j F, Y", strtotime($review['reviewDate'])) . ":</h4>";
+      $dv .= "<p id='writtenreviewtext'>$review[reviewText]</p></div>";
+   }
+   $dv .= "</div>";
+   return $dv;
+}
+
+// Review List Display for Update or Delete
+function buildReviewListDisplay($reviewList){
+   $dv = "<ul>";
+   foreach ($reviewList as $oneReview){
+      $dv .= "<li>$oneReview[invMake] $oneReview[invModel] (Reviewed on " . date("j F, Y", strtotime($oneReview['reviewDate'])) . ": <a href='/phpmotors/reviews/?action=updateReview&reviewId=$oneReview[reviewId]'>Edit</a> | <a href='/phpmotors/reviews/?action=deleteReview&reviewId=$oneReview[reviewId]'>Delete</a></li>";
+   }
+   $dv .= "</ul>";
+   return $dv;
+}
+
+
 /* * ********************************
 *  Functions for working with images
 * ********************************* */

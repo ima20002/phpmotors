@@ -49,7 +49,7 @@ $classificationList .= '</select>';
                     }
                     ?>
                     <form class="space" action="/phpmotors/vehicles/index.php" method="post">
-                        <p>Confirm Vehicle Deletion. The delete is permanent</p>
+                        <p class="redmessage">Confirm Vehicle Deletion. The delete is permanent</p>
 
                         <fieldset>
                             <label for="invMake">Make</label><br>

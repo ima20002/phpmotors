@@ -53,7 +53,7 @@ $classificationList .= '</select>';
                         <input type="text" id="invModel" name="invModel" <?php if(isset($invModel)){echo "value='$invModel'";}  ?> required><br>
 
                         <label for="invDescription">Description</label><br>
-                        <textarea rows="2" cols="20" id="invDescription" name="invDescription" required><?php if(isset($invDescription)){echo $invDescription;} ?></textarea><br> 
+                        <textarea rows="2" cols="20" id="invDescription" name="invDescription" <?php if(isset($invDescription)){echo $invDescription;} ?> required></textarea><br> 
 
                         <label for="invImage">Image Path</label><br>
                         <input type="text" id="invImage" name="invImage" <?php if(isset($invImage)){echo "value='$invImage'";}  ?> required><br>

@@ -40,7 +40,7 @@
 
                     <h2>Account Management</h2>
                     <p>Use this link to update account information</p>
-                    <?php echo "<a href='/phpmotors/accounts/?action=update'>Update Account Information</a>" ?>
+                    <?php echo "<span class='space'><a href='/phpmotors/accounts/?action=update'>Update Account Information</a></span>" ?>
 
                     <?php
                         if ($_SESSION['clientData']['clientLevel'] != 1){
@@ -48,8 +48,17 @@
                             echo '<p>Use this link to manage the inventory</p>';
                             echo '<span class="space"><a href="/phpmotors/vehicles/index.php">Vehicle Management</a></span>';
                         }
+                    
+                        
+                        echo '<h2>Manage Your Product Reviews</h2>';
+                        if(isset($reviewsListDisplay)){
+                            echo $reviewsListDisplay;
+                        }
                     ?>
                     
                 </div>
             </main>
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/module/footer.php'; ?> 
+<?php if(isset($_SESSION['message'])){
+    unset($_SESSION['message']);
+}

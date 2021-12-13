@@ -14,6 +14,8 @@ require_once '../model/vehicles-model.php';
 require_once '../library/functions.php';
 // Get the uploads model
 require_once '../model/uploads-model.php';
+// Get the reviews model
+require_once '../model/reviews-model.php';
 
 
 // Get the array of classifications
@@ -152,19 +154,19 @@ case 'updateVehicle':
     $invId = filter_input(INPUT_POST, 'invId', FILTER_SANITIZE_NUMBER_INT);
     
     if (empty($classificationId) || empty($invMake) || empty($invModel) || empty($invDescription) || empty($invImage) || empty($invThumbnail) || empty($invPrice) || empty($invStock) || empty($invColor)) {
-    $message = '<p>Please complete all information for the updated item! Double check the classification of the item.</p>';
+    $message = '<p class="redmessage">Please complete all information for the updated item! Double check the classification of the item.</p>';
     include '../view/vehicle-update.php';
     exit;
     }
 
     $updateResult = updateVehicle($invMake, $invModel, $invDescription, $invImage, $invThumbnail, $invPrice, $invStock, $invColor, $classificationId, $invId);
     if ($updateResult) {
-        $message = "<p>Congratulations, the $invMake $invModel was successfully updated.</p>";
+        $message = "<p class='redmessage'>Congratulations, the $invMake $invModel was successfully updated.</p>";
         $_SESSION['message'] = $message;
         header('location: /phpmotors/vehicles/');
         exit;
     } else {
-	    $message = "<p>Error. the $invMake $invModel was not updated.</p>";
+	    $message = "<p class='redmessage'>Error. the $invMake $invModel was not updated.</p>";
         include '../view/vehicle-update.php';
         exit;
 	}
@@ -187,12 +189,12 @@ case 'deleteVehicle':
     
     $deleteResult = deleteVehicle($invId);
     if ($deleteResult) {
-        $message = "<p class='notice'>Congratulations the $invMake $invModel was successfully deleted.</p>";
+        $message = "<p class='redmessage'>Congratulations the $invMake $invModel was successfully deleted.</p>";
         $_SESSION['message'] = $message;
         header('location: /phpmotors/vehicles/');
         exit;
     } else {
-        $message = "<p class='notice'>Error: $invMake $invModel was not
+        $message = "<p class='redmessage'>Error: $invMake $invModel was not
     deleted.</p>";
         $_SESSION['message'] = $message;
         header('location: /phpmotors/vehicles/');
@@ -204,7 +206,7 @@ case 'classification':
     $classificationName = filter_input(INPUT_GET, 'classificationName', FILTER_SANITIZE_STRING);
     $vehicles = getVehiclesByClassification($classificationName);
     if(!count($vehicles)){
-        $message = "<p class='notice'>Sorry, no $classificationName could be found.</p>";
+        $message = "<p class='redmessage'>Sorry, no $classificationName could be found.</p>";
     } else {
         $vehicleDisplay = buildVehiclesDisplay($vehicles);
     }
@@ -215,9 +217,11 @@ case 'vehicleinfomation':
     $invId = filter_input(INPUT_GET, 'invId', FILTER_SANITIZE_STRING);
     $vehicle = getInvItemInfo($invId);
     $thumbnails = getThumbnailImages($invId);
+    $reviewInfo = getReviewInfo($invId);
     
     $vehicleDisplay = buildEachVehicleDisplay($vehicle);
     $thumnailDisplay = buildThumnailDisplay($thumbnails);
+    $reviewsDisplay = buildReviewDisplay($reviewInfo);
     
     include '../view/vehicle-detail.php';
     break;

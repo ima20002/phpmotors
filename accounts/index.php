@@ -12,6 +12,8 @@ require_once '../model/main-model.php';
 require_once '../model/accounts-model.php';
 // Get the functions library
 require_once '../library/functions.php';
+// Get the reviews model
+require_once '../model/reviews-model.php';
 
 // Get the array of classifications
 $classifications = getClassifications();
@@ -57,7 +59,7 @@ switch ($action) {
 
     // Run basic checks, return if errors
     if (empty($clientEmail) || empty($passwordCheck)) {
-      $message = '<p>Please provide a valid email address and password.</p>';
+      $message = '<p class="redmessage">Please provide a valid email address and password.</p>';
       include '../view/login.php';
       exit;
     }
@@ -67,7 +69,7 @@ switch ($action) {
     $clientData = getClient($clientEmail);
 
     if(!$clientData){
-      $message = '<p>Incorrect email/password. Try again.</p>';
+      $message = '<p class="redmessage">Incorrect email/password. Try again.</p>';
       include '../view/login.php';
       exit;
     }
@@ -91,7 +93,7 @@ switch ($action) {
     // Store the array into the session
     $_SESSION['clientData'] = $clientData;
     // Send them to the admin view
-    include '../view/admin.php';
+    header('Location: /phpmotors/accounts/');
     exit;
 
   case 'register':
@@ -111,14 +113,14 @@ switch ($action) {
 
     // Check for existing email address in the table
     if ($existingEmail) {
-      $message = '<p class="notice">That email address already exists. Do you want to login instead?</p>';
+      $message = '<p class="redmessage">That email address already exists. Do you want to login instead?</p>';
       include '../view/login.php';
       exit;
     }
 
     // Check for missing data
     if (empty($clientFirstname) || empty($clientLastname) || empty($clientEmail) || empty($checkPassword)) {
-      $message = '<p>Please provide information for all empty form fields.</p>';
+      $message = '<p class="redmessage">Please provide information for all empty form fields.</p>';
       include '../view/registration.php';
       exit;
     }
@@ -163,7 +165,7 @@ switch ($action) {
     
     // Check for missing data
     if (empty($clientFirstname) || empty($clientLastname) || empty($clientEmail)) {
-      $message = '<p>Please provide information for all empty form fields.</p>';
+      $message = '<p class="redmessage">Please provide information for all empty form fields.</p>';
       include '../view/client-update.php';
       exit;
     }
@@ -174,11 +176,11 @@ switch ($action) {
     $_SESSION['clientData'] = getClient($clientEmail);
 
     if ($updateOutcome) {
-      $_SESSION['message'] = "<p>$clientFirstname. Your information has been updated.</p>";
-      header('Location: /phpmotors/accounts/?action=admin');
+      $_SESSION['message'] = "<p class='redmessage'>$clientFirstname. Your information has been updated.</p>";
+      header('Location: /phpmotors/accounts/');
       exit;
     } else {
-      $message = "<p>Sorry $clientFirstname, but the registration failed. Please try again.</p>";
+      $message = "<p class='redmessage'>Sorry $clientFirstname, but the registration failed. Please try again.</p>";
       include '../view/client-update.php';
       exit;
     }
@@ -194,7 +196,7 @@ switch ($action) {
 
     // Check for missing data
     if (empty($checkPassword)) {
-      $messagePass = '<p>Please Make sure your password matches the desired pattern.</p>';
+      $messagePass = '<p class="redmessage">Please Make sure your password matches the desired pattern.</p>';
       include '../view/client-update.php';
       exit;
     }
@@ -208,7 +210,7 @@ switch ($action) {
     // Check and report the result
     if ($updatePasswordOutcome) {
       $_SESSION['message'] = "<p>" . $_SESSION['clientData']['clientFirstname'] . ", Your password has been updated.</p>";
-      header('Location: /phpmotors/accounts/?action=admin');
+      header('Location: /phpmotors/accounts/');
       exit;
     } else {
       $_SESSION['messagePass'] = "<p>Sorry, the update process failed. Please try again.</p>";
@@ -219,6 +221,12 @@ switch ($action) {
     break;
 
   default:
-    include '../view/admin.php';
+      $clientId = $_SESSION['clientData']['clientId'];
+      $reviewList = getReviewList($clientId);
+
+      $reviewsListDisplay = buildReviewListDisplay($reviewList);
+
+      include '../view/admin.php';
+    
     break;
 }

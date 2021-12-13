@@ -41,9 +41,9 @@ switch ($action) {
         $imageCheck = checkExistingImage($imgName);
             
         if($imageCheck){
-            $message = '<p class="notice">An image by that name already exists.</p>';
+            $message = '<p class="redmessage">An image by that name already exists.</p>';
         } elseif (empty($invId) || empty($imgName)) {
-            $message = '<p class="notice">You must select a vehicle and image file for the vehicle.</p>';
+            $message = '<p class="redmessage">You must select a vehicle and image file for the vehicle.</p>';
         } else {
             // Upload the image, store the returned path to the file
             $imgPath = uploadFile('file1');
@@ -53,9 +53,9 @@ switch ($action) {
                 
             // Set a message based on the insert result
             if ($result) {
-                $message = '<p class="notice">The upload succeeded.</p>';
+                $message = '<p class="redmessage">The upload succeeded.</p>';
             } else {
-                $message = '<p class="notice">Sorry, the upload failed.</p>';
+                $message = '<p class="redmessage">Sorry, the upload failed.</p>';
             }
         }
             
@@ -87,9 +87,9 @@ switch ($action) {
             
         // Set a message based on the delete result
         if ($remove) {
-            $message = "<p class='notice'>$filename was successfully deleted.</p>";
+            $message = "<p class='redmessage'>$filename was successfully deleted.</p>";
         } else {
-            $message = "<p class='notice'>$filename was NOT deleted.</p>";
+            $message = "<p class='redmessage'>$filename was NOT deleted.</p>";
         }
             
         // Store message to session
@@ -107,7 +107,7 @@ switch ($action) {
         if (count($imageArray)) {
             $imageDisplay = buildImageDisplay($imageArray);
         } else {
-            $imageDisplay = '<p class="notice">Sorry, no images could be found.</p>';
+            $imageDisplay = '<p class="redmessage">Sorry, no images could be found.</p>';
         }
             
         // Get vehicles information from database

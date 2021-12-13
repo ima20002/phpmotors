@@ -154,6 +154,7 @@ footer p {
 input[type=submit] {
     margin: 10px;
     padding: 5px;
+    background-color: rgb(65, 150, 230);
 }
 .login p {
     font-size: 1.3rem;
@@ -231,9 +232,50 @@ input[type=submit] {
     width: 45%;
     margin: 10px;
 }
+/*---------Reviews---------*/
+#reviewform {
+    margin-bottom: 20px;
+}
+
+#reviewform h3 {
+    padding: 5px;
+}
+
+#reviewform textarea {
+    max-width: 250px;
+}
+
+#eachreview {
+    background-color: rgb(253, 224, 151);
+    margin-bottom: 10px;
+    padding: 10px;
+}
+#eachreview h3, h4 {
+    margin: 5px;
+    display: inline;
+}
+#writtenreviewtext{
+    background-color: white;
+    padding: 10px;
+    margin: 0;
+}
+
+/*---------Delete review --------*/
+
+#deletwarning{
+    color: red;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+#reviewForDelete{
+    background-color: rgb(253, 224, 151);
+    margin: 5px;
+}
 
 
-
+.redmessage {
+    color: red;
+}
 
 
 @media only screen and (min-width: 55rem) {
